@@ -2,10 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+
     <item
         android:id="@+id/menu_connect"
         app:showAsAction="never"
         android:title="@string/menu_disconnect"/>
+
 
     <group
         android:id="@+id/menu_group_connected"
@@ -22,6 +25,7 @@
             app:showAsAction="never"
             android:icon="@drawable/ic_cloud_download_grey_700_24dp"
             android:title="@string/download_mission"/>
+
         <item
             android:id="@+id/menu_kill_switch"
             app:showAsAction="never"

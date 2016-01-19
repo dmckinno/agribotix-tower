@@ -33,10 +33,15 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <org.droidplanner.android.view.button.RadioButtonCenter
+     <!--
+      DDM get rid of non-survey modes
+
+      <org.droidplanner.android.view.button.RadioButtonCenter
             android:id="@+id/editor_tools_marker"
             style="@style/editorButton"
             android:button="@drawable/ic_pin_drop_grey_700_24dp" />
+
+            -->
 
         <org.droidplanner.android.view.button.RadioButtonCenter
             android:id="@+id/editor_tools_draw"

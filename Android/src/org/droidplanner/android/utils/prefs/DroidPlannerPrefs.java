@@ -36,7 +36,7 @@ public class DroidPlannerPrefs {
     public static final boolean DEFAULT_USAGE_STATISTICS = true;
 
     public static final String PREF_CONNECTION_TYPE = "pref_connection_param_type";
-    public static final String DEFAULT_CONNECTION_TYPE = String.valueOf(ConnectionType.TYPE_USB);
+    public static final String DEFAULT_CONNECTION_TYPE = String.valueOf(ConnectionType.TYPE_UDP);
 
     private static final String PREF_KEEP_SCREEN_ON = "pref_keep_screen_bright";
     private static final boolean DEFAULT_KEEP_SCREEN_ON = false;
@@ -88,7 +88,7 @@ public class DroidPlannerPrefs {
     private static final boolean DEFAULT_WARNING_GROUND_COLLISION = false;
 
     public static final String PREF_ENABLE_MAP_ROTATION = "pref_map_enable_rotation";
-    private static final boolean DEFAULT_ENABLE_MAP_ROTATION = true;
+    private static final boolean DEFAULT_ENABLE_MAP_ROTATION = false;
 
     public static final String PREF_ENABLE_KILL_SWITCH = "pref_enable_kill_switch";
     private static final boolean DEFAULT_ENABLE_KILL_SWITCH = false;

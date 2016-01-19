@@ -25,6 +25,10 @@
                 style="@style/flightControlButton.Row"
                 android:drawableTop="@drawable/ic_arm_active"
                 android:text="@string/mission_control_arm"/>
+<!--
+
+DDM 12/31/15
+Get rid of Dronie
 
             <Button
                 android:id="@+id/mc_dronieBtn"
@@ -32,6 +36,8 @@
                 android:drawableTop="@drawable/ic_dronie_active"
                 android:text="@string/mission_control_dronie"
                 />
+
+                -->
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
@@ -92,7 +98,10 @@
                 android:drawableTop="@drawable/ic_home_active"
                 android:layout_weight="1"
                 android:text="@string/mission_control_home"/>
+<!--
 
+DDM 12/31/15
+Get rid of Land
             <Button
                 android:id="@+id/mc_land"
                 style="@style/flightControlButton.Row"
@@ -102,6 +111,8 @@
                 android:text="@string/mission_control_land"
                 android:layout_weight="1"
                 tools:ignore="ContentDescription"/>
+
+                -->
 
             <Button
                 android:id="@+id/mc_pause"
@@ -123,6 +134,10 @@
                 android:text="@string/mission_control_auto"
                 tools:ignore="ContentDescription"/>
 
+           <!--
+           DDM 12/31/15
+           Get rid of follow
+
             <Button
                 android:id="@+id/mc_follow"
                 style="@style/flightControlButton.Row"
@@ -132,6 +147,8 @@
                 android:text="@string/mission_control_follow"
                 android:layout_weight="1"
                 tools:ignore="ContentDescription"/>
+
+                -->
 
             <ImageView
                 android:id="@+id/reveal_toggler"

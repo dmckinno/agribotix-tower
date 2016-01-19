@@ -115,10 +115,10 @@ public class CopterFlightControlFragment extends BaseFlightControlFragment imple
                     }
 
                     /* FALL - THROUGH */
-                case AttributeEvent.FOLLOW_UPDATE:
-                    updateFlightModeButtons();
-                    updateFollowButton();
-                    break;
+//                case AttributeEvent.FOLLOW_UPDATE:
+//                    updateFlightModeButtons();
+//                    updateFollowButton();
+//                    break;
 
                 case AttributeEvent.MISSION_DRONIE_CREATED:
                     //Get the bearing of the dronie mission.
@@ -141,9 +141,9 @@ public class CopterFlightControlFragment extends BaseFlightControlFragment imple
     private View mArmedButtons;
     private View mInFlightButtons;
 
-    private Button followBtn;
+ //   private Button followBtn;
     private Button homeBtn;
-    private Button landBtn;
+ //   private Button landBtn;
     private Button pauseBtn;
     private Button autoBtn;
 
@@ -177,8 +177,11 @@ public class CopterFlightControlFragment extends BaseFlightControlFragment imple
         final Button disarmBtn = (Button) view.findViewById(R.id.mc_disarmBtn);
         disarmBtn.setOnClickListener(this);
 
-        landBtn = (Button) view.findViewById(R.id.mc_land);
-        landBtn.setOnClickListener(this);
+     // DDM 12/31/31
+     // Get rid of land button. It is confusing next to RTL.
+
+     //   landBtn = (Button) view.findViewById(R.id.mc_land);
+      //  landBtn.setOnClickListener(this);
 
         final Button takeoffBtn = (Button) view.findViewById(R.id.mc_takeoff);
         takeoffBtn.setOnClickListener(this);
@@ -192,11 +195,17 @@ public class CopterFlightControlFragment extends BaseFlightControlFragment imple
         final Button takeoffInAuto = (Button) view.findViewById(R.id.mc_TakeoffInAutoBtn);
         takeoffInAuto.setOnClickListener(this);
 
-        followBtn = (Button) view.findViewById(R.id.mc_follow);
-        followBtn.setOnClickListener(this);
+        // DDM 12/31/31
+        // Get rid of follow button. It is not good.
 
-        final Button dronieBtn = (Button) view.findViewById(R.id.mc_dronieBtn);
-        dronieBtn.setOnClickListener(this);
+    //    followBtn = (Button) view.findViewById(R.id.mc_follow);
+    //    followBtn.setOnClickListener(this);
+
+        // DDM 12/31/31
+        // Get rid of dronie button. It is not good.
+
+    //    final Button dronieBtn = (Button) view.findViewById(R.id.mc_dronieBtn);
+    //    dronieBtn.setOnClickListener(this);
     }
 
     @Override
@@ -206,7 +215,7 @@ public class CopterFlightControlFragment extends BaseFlightControlFragment imple
 
         setupButtonsByFlightState();
         updateFlightModeButtons();
-        updateFollowButton();
+     //   updateFollowButton();
 
         getBroadcastManager().registerReceiver(eventReceiver, eventFilter);
     }
@@ -376,9 +385,9 @@ public class CopterFlightControlFragment extends BaseFlightControlFragment imple
                 homeBtn.setActivated(true);
                 break;
 
-            case COPTER_LAND:
-                landBtn.setActivated(true);
-                break;
+    //        case COPTER_LAND:
+    //            landBtn.setActivated(true);
+    //            break;
             default:
                 break;
         }
@@ -386,32 +395,32 @@ public class CopterFlightControlFragment extends BaseFlightControlFragment imple
 
     private void resetFlightModeButtons() {
         homeBtn.setActivated(false);
-        landBtn.setActivated(false);
+//        landBtn.setActivated(false);
         pauseBtn.setActivated(false);
         autoBtn.setActivated(false);
     }
 
-    private void updateFollowButton() {
-        FollowState followState = getDrone().getAttribute(AttributeType.FOLLOW_STATE);
-        if (followState == null)
-            return;
-
-        switch (followState.getState()) {
-            case FollowState.STATE_START:
-                followBtn.setBackgroundColor(orangeColor);
-                break;
-
-            case FollowState.STATE_RUNNING:
-                followBtn.setActivated(true);
-                followBtn.setBackgroundResource(R.drawable.flight_action_row_bg_selector);
-                break;
-
-            default:
-                followBtn.setActivated(false);
-                followBtn.setBackgroundResource(R.drawable.flight_action_row_bg_selector);
-                break;
-        }
-    }
+//    private void updateFollowButton() {
+//        FollowState followState = getDrone().getAttribute(AttributeType.FOLLOW_STATE);
+//        if (followState == null)
+//            return;
+//
+//        switch (followState.getState()) {
+//            case FollowState.STATE_START:
+//                followBtn.setBackgroundColor(orangeColor);
+//                break;
+//
+//            case FollowState.STATE_RUNNING:
+//                followBtn.setActivated(true);
+//                followBtn.setBackgroundResource(R.drawable.flight_action_row_bg_selector);
+//                break;
+//
+//            default:
+//                followBtn.setActivated(false);
+//                followBtn.setBackgroundResource(R.drawable.flight_action_row_bg_selector);
+//                break;
+//        }
+//    }
 
     private void resetButtonsContainerVisibility() {
         mDisconnectedButtons.setVisibility(View.GONE);

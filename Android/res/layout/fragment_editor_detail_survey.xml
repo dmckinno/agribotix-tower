@@ -178,6 +178,9 @@
                     android:layout_height="wrap_content"
                     android:text="@string/flight_altitude" />
 
+
+
+
                 <org.droidplanner.android.view.spinnerWheel.CardWheelHorizontalView
                     android:id="@+id/overlapPicker"
                     style="@style/missionItemDetailCard"
@@ -193,6 +196,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/sidelap" >
                 </org.droidplanner.android.view.spinnerWheel.CardWheelHorizontalView>
+
+
 
             </LinearLayout>
 

@@ -282,7 +282,14 @@ public class DroidPlannerApp extends Application implements DroneListener, Tower
     }
 
     private ConnectionParameter retrieveConnectionParameters() {
-        final int connectionType = dpPrefs.getConnectionParameterType();
+
+       // DDM 12/31/15
+       // Commenting out this line and replacing connectionType with 1 forces a UDP connection for Solo
+       // If you use USB, pass through 0, TCP is 2, and Bluetooth is 3
+       // UDP server port is 14550
+       // final int connectionType = dpPrefs.getConnectionParameterType();
+
+        final int connectionType = 1;
         Bundle extraParams = new Bundle();
         final DroneSharePrefs droneSharePrefs = new DroneSharePrefs(dpPrefs.getDroneshareLogin(),
                 dpPrefs.getDronesharePassword(), dpPrefs.isDroneshareEnabled(),

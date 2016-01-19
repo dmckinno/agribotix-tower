@@ -59,6 +59,7 @@
             android:minHeight="40dp"
             android:minWidth="75dp">
 
+DDM get rid of RSSI
             <TextView
                 android:id="@+id/bar_signal"
                 style="?android:attr/buttonBarButtonStyle"
@@ -72,6 +73,8 @@
                 android:textSize="@dimen/info_bar_text_size"
                 tools:text="100 %" />
         </FrameLayout>
+
+
 
     </TableRow>
 

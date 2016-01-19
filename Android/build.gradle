@@ -137,20 +137,20 @@ android {
         debug {
             applicationIdSuffix ".debug"
             versionNameSuffix ".debug.${versionBuild}"
-            resValue "string", "app_title", "Tower Dev"
+            resValue "string", "app_title", "Agribotix Debug"
         }
 
         beta {
             signingConfig signingConfigs.release
             applicationIdSuffix ".beta"
             versionNameSuffix ".beta.${versionBuild}"
-            resValue "string", "app_title", "Tower Beta"
+            resValue "string", "app_title", "Agribotix Beta"
             buildConfigField "boolean", "ENABLE_CRASHLYTICS", "true"
         }
 
         release {
             signingConfig signingConfigs.release
-            resValue "string", "app_title", "Tower"
+            resValue "string", "app_title", "Agribotix"
             buildConfigField "boolean", "WRITE_LOG_FILE", "false"
             buildConfigField "boolean", "ENABLE_CRASHLYTICS", "true"
         }

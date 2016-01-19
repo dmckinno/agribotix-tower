@@ -14,10 +14,14 @@
             android:icon="@drawable/ic_menu_editor_grey600_24dp"
             android:title="@string/editor" />
 
+       <!--DDM 12/31/15
+        //Get ride of flight history
+
         <item
             android:id="@+id/navigation_locator"
             android:icon="@drawable/ic_menu_flight_history_grey600_24dp"
             android:title="@string/locator" />
+        -->
 
     </group>
 
@@ -29,26 +33,29 @@
             android:icon="@drawable/ic_menu_parameters_grey600_24dp"
             android:title="@string/screen_parameters" />
 
-        <item
-            android:id="@+id/navigation_checklist"
-            android:icon="@drawable/ic_menu_checklist_grey600_24dp"
-            android:title="@string/screen_checklist" />
+        <!--DDM 12/31/15
+        Get rid of checklist
+              <item
+                  android:id="@+id/navigation_checklist"
+                  android:icon="@drawable/ic_menu_checklist_grey600_24dp"
+                  android:title="@string/screen_checklist" />
+      -->
 
-        <item
-            android:id="@+id/navigation_calibration"
-            android:icon="@drawable/ic_menu_calibration_grey600_24dp"
-            android:title="@string/screen_cal" />
+              <item
+                  android:id="@+id/navigation_calibration"
+                  android:icon="@drawable/ic_menu_calibration_grey600_24dp"
+                  android:title="@string/screen_cal" />
 
-    </group>
+          </group>
 
-    <group
-        android:id="@+id/settings_screen"
-        android:checkableBehavior="single">
+          <group
+              android:id="@+id/settings_screen"
+              android:checkableBehavior="single">
 
-        <item
-            android:id="@+id/navigation_settings"
-            android:icon="@drawable/ic_menu_settings_grey600_24dp"
-            android:title="@string/settings" />
-    </group>
+              <item
+                  android:id="@+id/navigation_settings"
+                  android:icon="@drawable/ic_menu_settings_grey600_24dp"
+                  android:title="@string/settings" />
+          </group>
 
-</menu>
+      </menu>

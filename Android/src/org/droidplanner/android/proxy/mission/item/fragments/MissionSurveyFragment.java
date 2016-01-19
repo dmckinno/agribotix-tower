@@ -52,6 +52,9 @@ public class MissionSurveyFragment<T extends Survey> extends MissionDetailFragme
         }
     };
 
+//DDM 12/31/15
+    //Camera is hardcoded to GoPro
+//replace 13 with position
     private final SpinnerSelfSelect.OnSpinnerItemSelectedListener cameraSpinnerListener = new SpinnerSelfSelect.OnSpinnerItemSelectedListener() {
         @Override
         public void onSpinnerItemSelected(Spinner spinner, int position) {
@@ -59,7 +62,7 @@ public class MissionSurveyFragment<T extends Survey> extends MissionDetailFragme
                 if(cameraAdapter.isEmpty())
                     return;
 
-                CameraDetail cameraInfo = cameraAdapter.getItem(position);
+                CameraDetail cameraInfo = cameraAdapter.getItem(12);
                 for (T survey : getMissionItems()) {
                     survey.getSurveyDetail().setCameraDetail(cameraInfo);
                 }
@@ -106,10 +109,28 @@ public class MissionSurveyFragment<T extends Survey> extends MissionDetailFragme
         waypointType = (TextView) view.findViewById(id.WaypointType);
 
         CameraProxy camera = getDrone().getAttribute(AttributeType.CAMERA);
-        List<CameraDetail> cameraDetails = camera == null
+
+//        List<CameraDetail> cameraDetails = camera == null
+//                ? Collections.<CameraDetail>emptyList()
+//                : camera.getAvailableCameraInfos();
+
+                List<CameraDetail> cameraDetails = camera == null
                 ? Collections.<CameraDetail>emptyList()
                 : camera.getAvailableCameraInfos();
+
+//        <?xml version="1.0" encoding="utf-8"?>
+//        <cameraInfo>
+//        <Name>GoPro Hero 4 Black (Wide)</Name>
+//        <SensorWidth>6.17</SensorWidth>
+//        <SensorHeight>4.55</SensorHeight>
+//        <SensorResolution>12.0</SensorResolution>
+//        <FocalLength>2.8</FocalLength>
+//        </cameraInfo>
+
+
+
         cameraAdapter = new CamerasAdapter(getActivity(), android.R.layout.simple_spinner_dropdown_item, cameraDetails);
+
 
         cameraSpinner = (SpinnerSelfSelect) view.findViewById(id.cameraFileSpinner);
         cameraSpinner.setAdapter(cameraAdapter);
@@ -118,11 +139,12 @@ public class MissionSurveyFragment<T extends Survey> extends MissionDetailFragme
         mAnglePicker = (CardWheelHorizontalView) view.findViewById(id.anglePicker);
         mAnglePicker.setViewAdapter(new NumericWheelAdapter(context, R.layout.wheel_text_centered, 0, 180, "%dº"));
 
+
         mOverlapPicker = (CardWheelHorizontalView) view.findViewById(id.overlapPicker);
-        mOverlapPicker.setViewAdapter(new NumericWheelAdapter(context, R.layout.wheel_text_centered, 0, 99, "%d %%"));
+        mOverlapPicker.setViewAdapter(new NumericWheelAdapter(context, R.layout.wheel_text_centered, 85, 85, "%d %%"));
 
         mSidelapPicker = (CardWheelHorizontalView) view.findViewById(R.id.sidelapPicker);
-        mSidelapPicker.setViewAdapter(new NumericWheelAdapter(context, R.layout.wheel_text_centered, 0, 99, "%d %%"));
+        mSidelapPicker.setViewAdapter(new NumericWheelAdapter(context, R.layout.wheel_text_centered, 70, 70, "%d %%"));
 
         final LengthUnitProvider lengthUP = getLengthUnitProvider();
         mAltitudePicker = (CardWheelHorizontalView) view.findViewById(R.id.altitudePicker);
@@ -224,8 +246,9 @@ public class MissionSurveyFragment<T extends Survey> extends MissionDetailFragme
         List<T> surveyList = getMissionItems();
         if (!surveyList.isEmpty()) {
             T survey = surveyList.get(0);
-            final int cameraSelection = cameraAdapter.getPosition(survey.getSurveyDetail().getCameraDetail());
-            cameraSpinner.setSelection(Math.max(cameraSelection, 0));
+        //    final int cameraSelection = cameraAdapter.getPosition(survey.getSurveyDetail().getCameraDetail());
+        //    cameraSpinner.setSelection(Math.max(cameraSelection, 0));
+            cameraSpinner.setSelection(Math.max(12, 0));
         }
     }
 

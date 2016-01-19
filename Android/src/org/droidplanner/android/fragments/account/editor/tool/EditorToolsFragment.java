@@ -43,6 +43,7 @@ public class EditorToolsFragment extends ApiListenerFragment implements OnClickL
         MARKER, DRAW, TRASH, SELECTOR, NONE
     }
 
+
     public interface EditorToolListener {
         void editorToolChanged(EditorTools tools);
 
@@ -74,7 +75,7 @@ public class EditorToolsFragment extends ApiListenerFragment implements OnClickL
     /**
      * The marker tool should be set by default.
      */
-    private static final EditorTools DEFAULT_TOOL = EditorTools.MARKER;
+    private static final EditorTools DEFAULT_TOOL = EditorTools.DRAW;
 
     private final EditorToolsImpl[] editorToolsImpls = new EditorToolsImpl[EditorTools.values().length];
 
@@ -94,7 +95,7 @@ public class EditorToolsFragment extends ApiListenerFragment implements OnClickL
     //Sub action views
     private View editorSubTools;
     private Spinner drawItemsSpinner;
-    private Spinner markerItemsSpinner;
+  //  private Spinner markerItemsSpinner;
 
     private View clearSubOptions;
     TextView clearMission;
@@ -134,14 +135,14 @@ public class EditorToolsFragment extends ApiListenerFragment implements OnClickL
         drawItemsSpinner.setSelection(drawItemsAdapter.getPosition(drawToolImpl.getSelected()));
         drawItemsSpinner.setOnItemSelectedListener(drawToolImpl);
 
-        final MarkerToolsImpl markerToolImpl = (MarkerToolsImpl) editorToolsImpls[EditorTools.MARKER.ordinal()];
-        final RadioButtonCenter buttonMarker = (RadioButtonCenter) view.findViewById(R.id.editor_tools_marker);
-        final AdapterMissionItems markerItemsAdapter = new AdapterMissionItems(context,
-                R.layout.spinner_drop_down_mission_item, MarkerToolsImpl.MARKER_ITEMS_TYPE);
-        markerItemsSpinner = (Spinner) view.findViewById(R.id.marker_items_spinner);
-        markerItemsSpinner.setAdapter(markerItemsAdapter);
-        markerItemsSpinner.setSelection(markerItemsAdapter.getPosition(markerToolImpl.getSelected()));
-        markerItemsSpinner.setOnItemSelectedListener(markerToolImpl);
+ //       final MarkerToolsImpl markerToolImpl = (MarkerToolsImpl) editorToolsImpls[EditorTools.MARKER.ordinal()];
+//       final RadioButtonCenter buttonMarker = (RadioButtonCenter) view.findViewById(R.id.editor_tools_marker);
+//        final AdapterMissionItems markerItemsAdapter = new AdapterMissionItems(context,
+//                R.layout.spinner_drop_down_mission_item, MarkerToolsImpl.MARKER_ITEMS_TYPE);
+ //       markerItemsSpinner = (Spinner) view.findViewById(R.id.marker_items_spinner);
+ //       markerItemsSpinner.setAdapter(markerItemsAdapter);
+ //       markerItemsSpinner.setSelection(markerItemsAdapter.getPosition(markerToolImpl.getSelected()));
+ //       markerItemsSpinner.setOnItemSelectedListener(markerToolImpl);
 
         final RadioButtonCenter buttonTrash = (RadioButtonCenter) view.findViewById(R.id.editor_tools_trash);
         final TrashToolsImpl trashToolImpl = (TrashToolsImpl) editorToolsImpls[EditorTools.TRASH.ordinal()];
@@ -159,7 +160,7 @@ public class EditorToolsFragment extends ApiListenerFragment implements OnClickL
         selectAll = (TextView) view.findViewById(R.id.select_all_button);
         selectAll.setOnClickListener(selectorToolImpl);
 
-        for (View vv : new View[]{buttonDraw, buttonMarker, buttonTrash, buttonSelector}) {
+        for (View vv : new View[]{buttonDraw, buttonTrash, buttonSelector}) {
             vv.setOnClickListener(this);
         }
     }
@@ -251,8 +252,8 @@ public class EditorToolsFragment extends ApiListenerFragment implements OnClickL
         if (clearSubOptions != null)
             clearSubOptions.setVisibility(View.GONE);
 
-        if (markerItemsSpinner != null)
-            markerItemsSpinner.setVisibility(View.GONE);
+ //       if (markerItemsSpinner != null)
+ //           markerItemsSpinner.setVisibility(View.GONE);
 
         if (drawItemsSpinner != null)
             drawItemsSpinner.setVisibility(View.GONE);
@@ -328,10 +329,10 @@ public class EditorToolsFragment extends ApiListenerFragment implements OnClickL
                 drawItemsSpinner.setVisibility(View.VISIBLE);
                 break;
 
-            case MARKER:
-                editorSubTools.setVisibility(View.VISIBLE);
-                markerItemsSpinner.setVisibility(View.VISIBLE);
-                break;
+//            case MARKER:
+//                editorSubTools.setVisibility(View.VISIBLE);
+//      //          markerItemsSpinner.setVisibility(View.VISIBLE);
+//                break;
 
             default:
                 hideSubTools();
@@ -357,8 +358,8 @@ public class EditorToolsFragment extends ApiListenerFragment implements OnClickL
      */
     private EditorTools getToolForView(int viewId) {
         switch (viewId) {
-            case R.id.editor_tools_marker:
-                return EditorTools.MARKER;
+//            case R.id.editor_tools_marker:
+//                return EditorTools.MARKER;
 
             case R.id.editor_tools_draw:
                 return EditorTools.DRAW;
@@ -382,8 +383,8 @@ public class EditorToolsFragment extends ApiListenerFragment implements OnClickL
      */
     private int getViewForTool(EditorTools tool) {
         switch (tool) {
-            case MARKER:
-                return R.id.editor_tools_marker;
+//            case MARKER:
+//                return R.id.editor_tools_marker;
 
             case DRAW:
                 return R.id.editor_tools_draw;

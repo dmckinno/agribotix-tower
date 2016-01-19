@@ -6,12 +6,12 @@
     <color name="greyText">#5d5d5d</color>
     <color name="dark_grey">#9E9E9E</color>
     <color name="transparent_light_grey">#d0EFEFEF</color>
-    <color name="light_grey">#EFEFEF</color>
+    <color name="light_grey">#d3d3d3</color>
     <color name="white">#fafafa</color>
     <color name="white_grey">#f7f6f6</color>
     <color name="navigation_entry_color">#212121</color>
 
-    <color name="header_background">#00a6e3</color>
+    <color name="header_background">#60B05A</color>
 
     <color name="orange">#FAAF4C</color>
     <color name="ground_speed_label">#0a5242</color>

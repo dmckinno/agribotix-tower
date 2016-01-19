@@ -18,9 +18,9 @@ import java.util.List;
 class DrawToolsImpl extends EditorToolsImpl implements AdapterView.OnItemSelectedListener {
 
     static final MissionItemType[] DRAW_ITEMS_TYPE = {
-            MissionItemType.WAYPOINT,
-            MissionItemType.SPLINE_WAYPOINT,
-            MissionItemType.SURVEY,
+     //       MissionItemType.WAYPOINT,
+     //      MissionItemType.SPLINE_WAYPOINT,
+     //       MissionItemType.SURVEY,
             MissionItemType.SPLINE_SURVEY
     };
 
@@ -70,23 +70,23 @@ class DrawToolsImpl extends EditorToolsImpl implements AdapterView.OnItemSelecte
     public void onPathFinished(List<LatLong> points) {
         if (missionProxy != null) {
             switch (selectedType) {
-                case WAYPOINT:
-                default:
-                    missionProxy.addWaypoints(points);
-                    break;
+//                case WAYPOINT:
+//                default:
+//                    missionProxy.addWaypoints(points);
+//                    break;
 
-                case SPLINE_WAYPOINT:
-                    missionProxy.addSplineWaypoints(points);
-                    break;
-
-                case SURVEY:
-                    if (points.size() > 2) {
-                        missionProxy.addSurveyPolygon(points, false);
-                    } else {
-                        editorToolsFragment.setTool(EditorToolsFragment.EditorTools.DRAW);
-                        return;
-                    }
-                    break;
+//                case SPLINE_WAYPOINT:
+//                    missionProxy.addSplineWaypoints(points);
+//                    break;
+//
+//                case SURVEY:
+//                    if (points.size() > 2) {
+//                        missionProxy.addSurveyPolygon(points, false);
+//                    } else {
+//                        editorToolsFragment.setTool(EditorToolsFragment.EditorTools.DRAW);
+//                        return;
+//                    }
+//                    break;
 
                 case SPLINE_SURVEY:
                     if (points.size() > 2) {

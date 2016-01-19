@@ -20,7 +20,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
-        android:text="@string/account_label"
+        android:text=
+        "Agribotix
+Agricultural intelligence.
+Drone enabled."
         android:id="@+id/account_screen_label"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 

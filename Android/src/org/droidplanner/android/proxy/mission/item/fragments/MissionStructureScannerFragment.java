@@ -47,6 +47,12 @@ public class MissionStructureScannerFragment extends MissionDetailFragment imple
                     surveyDetail.setCameraDetail(cameraInfo);
                 }
 
+                for (StructureScanner scan : getMissionItems()) {
+                    SurveyDetail surveyDetail = scan.getSurveyDetail();
+                    surveyDetail.setCameraDetail(cameraInfo);
+                }
+
+
                 submitForBuilding();
             }
         }
